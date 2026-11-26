@@ -309,3 +309,7 @@ a.contact__card:hover { border-color: var(--accent); transform: translateY(-2px)
 .contact__card span { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
 .contact__card strong { font-size: 1.05rem; font-weight: 600; word-break: break-word; }
 @media (max-width: 720px) { .contact__cards { grid-template-columns: 1fr; } }
+
+.contact__icon { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 8px; border-radius: 12px; background: rgba(34, 211, 166, .1); font-style: normal; }
+.contact__icon svg { width: 22px; height: 22px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.contact__icon svg.fill { fill: var(--accent); stroke: none; }
