@@ -51,7 +51,7 @@ def policy(hashes, captcha=False):
     return "; ".join(parts)
 
 
-for path in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
+for path in sorted(glob.glob(os.path.join(ROOT, '*.html')) + glob.glob(os.path.join(ROOT, 'servicios', '*.html'))):
     with open(path, encoding='utf-8', newline='') as f:
         html = f.read()
     nl = '\r\n' if '\r\n' in html else '\n'
@@ -67,4 +67,4 @@ for path in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
         html = html[:m.end()] + meta + html[m.end():]
     with open(path, 'w', encoding='utf-8', newline='') as f:
         f.write(html)
-    print(os.path.basename(path), len(inline_hashes(html)), 'script(s) en linea')
+    print(os.path.relpath(path, ROOT), len(inline_hashes(html)), 'script(s) en linea')

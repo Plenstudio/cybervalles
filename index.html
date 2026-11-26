@@ -14,7 +14,7 @@
   <meta name="theme-color" content="#0a1020">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261126a">
+  <link rel="stylesheet" href="styles.css?v=20261126c">
 </head>
 <body>
 
@@ -82,37 +82,42 @@
           <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
           <h3>SIEM + SOC gestionado</h3>
           <p>Centralizamos los registros de tus sistemas, los correlacionamos y nuestros analistas investigan cada alerta relevante. Te avisamos solo cuando importa, con el contexto y los pasos a seguir.</p>
-          <a href="#siem-soc" class="card__link">Cómo funciona →</a>
+          <a href="/servicios/siem-soc.html" class="card__link">Ver detalle →</a>
         </article>
 
         <article class="card">
           <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
           <h3>Pentesting</h3>
           <p>Ataques simulados y controlados sobre tu infraestructura externa e interna, aplicaciones web y móviles, cloud y entornos industriales. Informe con evidencias, criticidad y solución.</p>
+          <a href="/servicios/pentesting.html" class="card__link">Ver detalle →</a>
         </article>
 
         <article class="card">
           <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M8 11h6M11 8v6"/></svg></div>
           <h3>Análisis de vulnerabilidades</h3>
           <p>Escaneo automatizado y revisión manual de sistemas, redes y aplicaciones. Priorizamos los riesgos según CVSS y OWASP para que sepas qué corregir primero.</p>
+          <a href="/servicios/analisis-vulnerabilidades.html" class="card__link">Ver detalle →</a>
         </article>
 
         <article class="card">
           <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
           <h3>Simulaciones de phishing</h3>
           <p>Campañas realistas para medir cómo responde tu equipo, con métricas por departamento y medidas técnicas para reforzar el correo y la mensajería.</p>
+          <a href="/servicios/phishing.html" class="card__link">Ver detalle →</a>
         </article>
 
         <article class="card">
           <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M2 9 12 4l10 5-10 5L2 9Z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
           <h3>Formación y concienciación</h3>
           <p>Sesiones prácticas adaptadas a cada perfil: plantilla general, mandos y equipos técnicos. Contraseñas, phishing, protección de datos y qué hacer ante un incidente.</p>
+          <a href="/servicios/formacion.html" class="card__link">Ver detalle →</a>
         </article>
 
         <article class="card">
           <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg></div>
           <h3>Prevención de fuga de datos (DLP)</h3>
           <p>Software que supervisa, detecta y responde ante fugas de información internas, sean por error o intencionadas, y reduce el impacto de un ransomware.</p>
+          <a href="/servicios/dlp.html" class="card__link">Ver detalle →</a>
         </article>
       </div>
     </div>
@@ -255,12 +260,12 @@
         </div>
         <label>Servicio de interés
           <select name="service">
-            <option>SIEM + SOC gestionado</option>
-            <option>Pentesting</option>
-            <option>Análisis de vulnerabilidades</option>
-            <option>Simulaciones de phishing</option>
-            <option>Formación y concienciación</option>
-            <option>Prevención de fuga de datos (DLP)</option>
+            <option data-slug="siem-soc">SIEM + SOC gestionado</option>
+            <option data-slug="pentesting">Pentesting</option>
+            <option data-slug="analisis-vulnerabilidades">Análisis de vulnerabilidades</option>
+            <option data-slug="phishing">Simulaciones de phishing</option>
+            <option data-slug="formacion">Formación y concienciación</option>
+            <option data-slug="dlp">Prevención de fuga de datos (DLP)</option>
             <option>No lo sé, necesito asesoramiento</option>
           </select>
         </label>
@@ -288,6 +293,6 @@
 </footer>
 
 <script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
-<script src="script.js?v=20261126a"></script>
+<script src="script.js?v=20261126c"></script>
 </body>
 </html>

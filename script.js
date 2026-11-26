@@ -17,6 +17,14 @@ const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
 // Formulario (Web3Forms + hCaptcha)
+// Preselecciona el servicio si se llega desde una ficha (/?servicio=pentesting#contacto)
+const svcParam = new URLSearchParams(location.search).get('servicio');
+const svcSelect = document.querySelector('select[name="service"]');
+if (svcParam && svcSelect) {
+  const opt = [...svcSelect.options].find(o => o.dataset.slug === svcParam);
+  if (opt) svcSelect.value = opt.value;
+}
+
 const MIN_FILL_MS = 4000;   // menos de 4 s desde que carga la página = bot
 const COOLDOWN_MS = 60000;  // 1 envío por minuto y navegador
 let formStart = Date.now();
