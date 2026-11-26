@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberValles · Ciberseguridad gestionada, SIEM y SOC para empresas</title>
+  <meta name="description" content="CyberValles protege tu empresa con SIEM y SOC 24/7, pentesting, análisis de vulnerabilidades, simulaciones de phishing, formación y DLP.">
+  <link rel="canonical" href="https://cybervalles.com/">
+  <meta property="og:title" content="CyberValles · Ciberseguridad gestionada">
+  <meta property="og:description" content="SIEM + SOC, pentesting, análisis de vulnerabilidades, phishing, formación y DLP.">
+  <meta property="og:url" content="https://cybervalles.com/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a1020">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="container nav__inner">
+    <a href="#top" class="logo" aria-label="CyberValles inicio">
+      <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M16 2 4 7v8c0 7.5 5.1 13.4 12 15 6.9-1.6 12-7.5 12-15V7L16 2Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m9 13 4 8 3-6 3 6 4-8" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Cyber<strong>Valles</strong></span>
+    </a>
+    <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="nav__menu">
+      <a href="#servicios">Servicios</a>
+      <a href="#siem-soc">SIEM + SOC</a>
+      <a href="#metodo">Cómo trabajamos</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto" class="btn btn--sm">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <p class="eyebrow">Ciberseguridad para empresas</p>
+        <h1>Vemos lo que pasa en tu red. <span class="hl">Actuamos antes que el atacante.</span></h1>
+        <p class="lead">Monitorización continua con SIEM, analistas SOC que revisan cada alerta y servicios ofensivos para encontrar tus puntos débiles. Todo con un único interlocutor.</p>
+        <div class="hero__cta">
+          <a href="#contacto" class="btn">Solicitar diagnóstico gratuito</a>
+          <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+        </div>
+        <ul class="hero__points">
+          <li>Monitorización 24/7</li>
+          <li>Informes claros para dirección</li>
+          <li>Alineado con RGPD y NIS2</li>
+        </ul>
+      </div>
+      <div class="console" aria-hidden="true">
+        <div class="console__bar"><span></span><span></span><span></span><em>soc · eventos en directo</em></div>
+        <ol class="console__log">
+          <li><time>09:41:02</time><b class="ok">INFO</b> 12.480 eventos normalizados</li>
+          <li><time>09:41:07</time><b class="warn">MED</b> Inicio de sesión desde país inusual</li>
+          <li><time>09:41:09</time><b class="ok">SOC</b> Analista revisa · usuario verificado</li>
+          <li><time>09:42:15</time><b class="crit">ALTA</b> Fuerza bruta contra VPN</li>
+          <li><time>09:42:16</time><b class="ok">SOC</b> IP bloqueada · cliente notificado</li>
+          <li class="cursor"><time>09:42:20</time>_</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Servicios</p>
+        <h2>Prevención, detección y respuesta</h2>
+        <p>Contrata un servicio concreto o combínalos en un plan a medida para tu empresa.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card card--featured">
+          <span class="tag">Nuevo</span>
+          <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+          <h3>SIEM + SOC gestionado</h3>
+          <p>Centralizamos los registros de tus sistemas, los correlacionamos y nuestros analistas investigan cada alerta relevante. Te avisamos solo cuando importa, con el contexto y los pasos a seguir.</p>
+          <a href="#siem-soc" class="card__link">Cómo funciona →</a>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
+          <h3>Pentesting</h3>
+          <p>Ataques simulados y controlados sobre tu infraestructura externa e interna, aplicaciones web y móviles, cloud y entornos industriales. Informe con evidencias, criticidad y solución.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M8 11h6M11 8v6"/></svg></div>
+          <h3>Análisis de vulnerabilidades</h3>
+          <p>Escaneo automatizado y revisión manual de sistemas, redes y aplicaciones. Priorizamos los riesgos según CVSS y OWASP para que sepas qué corregir primero.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <h3>Simulaciones de phishing</h3>
+          <p>Campañas realistas para medir cómo responde tu equipo, con métricas por departamento y medidas técnicas para reforzar el correo y la mensajería.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M2 9 12 4l10 5-10 5L2 9Z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+          <h3>Formación y concienciación</h3>
+          <p>Sesiones prácticas adaptadas a cada perfil: plantilla general, mandos y equipos técnicos. Contraseñas, phishing, protección de datos y qué hacer ante un incidente.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg></div>
+          <h3>Prevención de fuga de datos (DLP)</h3>
+          <p>Software que supervisa, detecta y responde ante fugas de información internas, sean por error o intencionadas, y reduce el impacto de un ransomware.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIEM + SOC -->
+  <section class="section section--alt" id="siem-soc">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">SIEM + SOC</p>
+        <h2>Un SIEM sin analistas solo genera ruido</h2>
+        <p>El SIEM recoge y correlaciona eventos. Nuestro SOC los convierte en decisiones: qué es real, qué es urgente y qué hay que hacer.</p>
+      </header>
+
+      <ol class="flow">
+        <li>
+          <span class="flow__n">01</span>
+          <h3>Recogida</h3>
+          <p>Conectamos firewalls, servidores, endpoints, Microsoft 365, cloud y aplicaciones críticas.</p>
+        </li>
+        <li>
+          <span class="flow__n">02</span>
+          <h3>Correlación</h3>
+          <p>El SIEM normaliza los eventos y aplica reglas de detección e inteligencia de amenazas.</p>
+        </li>
+        <li>
+          <span class="flow__n">03</span>
+          <h3>Análisis SOC</h3>
+          <p>Un analista revisa cada alerta, descarta falsos positivos e investiga el alcance.</p>
+        </li>
+        <li>
+          <span class="flow__n">04</span>
+          <h3>Respuesta</h3>
+          <p>Te avisamos con lo ocurrido y los pasos a seguir, o contenemos la amenaza si así lo acordamos.</p>
+        </li>
+      </ol>
+
+      <div class="split">
+        <div>
+          <h3>Qué recibes</h3>
+          <ul class="checks">
+            <li>Monitorización continua de tus sistemas</li>
+            <li>Alertas filtradas y explicadas, sin falsos positivos</li>
+            <li>Tiempos de respuesta definidos por contrato</li>
+            <li>Informe mensual de actividad y tendencias</li>
+            <li>Conservación de registros para auditorías y cumplimiento</li>
+            <li>Recomendaciones para mejorar tu seguridad mes a mes</li>
+          </ul>
+        </div>
+        <div class="stats">
+          <div><strong>24/7</strong><span>vigilancia</span></div>
+          <div><strong>&lt;15 min</strong><span>respuesta a alertas críticas*</span></div>
+          <div><strong>1</strong><span>interlocutor para todo</span></div>
+          <p class="note">* Valores orientativos; se fijan en el acuerdo de servicio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="section" id="metodo">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Cómo trabajamos</p>
+        <h2>Simple para ti, riguroso por dentro</h2>
+      </header>
+      <div class="steps">
+        <div><span>1</span><h3>Diagnóstico</h3><p>Una reunión para entender tu empresa, tus sistemas y lo que más te preocupa.</p></div>
+        <div><span>2</span><h3>Propuesta</h3><p>Plan con alcance, plazos y precio cerrado. Sin letra pequeña.</p></div>
+        <div><span>3</span><h3>Puesta en marcha</h3><p>Desplegamos y configuramos sin interrumpir tu actividad.</p></div>
+        <div><span>4</span><h3>Seguimiento</h3><p>Informes claros y reuniones periódicas para medir la mejora.</p></div>
+      </div>
+
+      <div class="values">
+        <div><h3>A medida</h3><p>Cada empresa tiene riesgos distintos; el servicio se adapta a tu tamaño y sector.</p></div>
+        <div><h3>Transparencia</h3><p>Sabrás en todo momento qué hacemos, qué hemos encontrado y por qué.</p></div>
+        <div><h3>Ética</h3><p>Pruebas siempre autorizadas y confidencialidad total sobre tu información.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container container--narrow">
+      <header class="section__head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Lo que suelen preguntarnos</h2>
+      </header>
+      <details>
+        <summary>¿Necesito tener ya un SIEM para contratar el SOC?</summary>
+        <p>No. Te proporcionamos la plataforma SIEM y la gestionamos nosotros. Si ya tienes una, podemos trabajar sobre ella.</p>
+      </details>
+      <details>
+        <summary>¿Es solo para empresas grandes?</summary>
+        <p>No. Diseñamos el servicio para pymes y medianas empresas, conectando solo las fuentes que aportan valor para mantener un coste razonable.</p>
+      </details>
+      <details>
+        <summary>¿El pentesting puede afectar a mis sistemas?</summary>
+        <p>Las pruebas se planifican contigo, con alcance y horarios acordados, y se hacen de forma controlada para no interrumpir tu actividad.</p>
+      </details>
+      <details>
+        <summary>¿Me ayuda con NIS2 o el RGPD?</summary>
+        <p>Sí. La monitorización, la conservación de registros, la formación y los informes que entregamos son evidencias útiles para cumplir estas normativas.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta?</summary>
+        <p>Depende del número de equipos, usuarios y fuentes a monitorizar. Tras el diagnóstico gratuito te enviamos una propuesta con precio cerrado.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container contact">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2>Hablemos de tu seguridad</h2>
+        <p>Cuéntanos qué necesitas y te respondemos en menos de 24 horas laborables.</p>
+        <ul class="contact__data">
+          <!-- TODO: sustituir por los datos reales -->
+          <li><span>Email</span><a href="mailto:info@cybervalles.com">info@cybervalles.com</a></li>
+          <li><span>Teléfono</span><a href="tel:+34900000000">+34 900 000 000</a></li>
+          <li><span>Dirección</span>Calle Ejemplo 1, 08000 Ciudad</li>
+        </ul>
+      </div>
+
+      <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- TODO: pega aquí tu Access Key de web3forms.com -->
+        <input type="hidden" name="access_key" value="TU_ACCESS_KEY_DE_WEB3FORMS">
+        <input type="hidden" name="subject" value="Nueva consulta desde cybervalles.com">
+        <input type="hidden" name="from_name" value="Web CyberValles">
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+
+        <div class="form__row">
+          <label>Nombre<input type="text" name="name" required autocomplete="name"></label>
+          <label>Empresa<input type="text" name="company" autocomplete="organization"></label>
+        </div>
+        <div class="form__row">
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+          <label>Teléfono<input type="tel" name="phone" autocomplete="tel"></label>
+        </div>
+        <label>Servicio de interés
+          <select name="service">
+            <option>SIEM + SOC gestionado</option>
+            <option>Pentesting</option>
+            <option>Análisis de vulnerabilidades</option>
+            <option>Simulaciones de phishing</option>
+            <option>Formación y concienciación</option>
+            <option>Prevención de fuga de datos (DLP)</option>
+            <option>No lo sé, necesito asesoramiento</option>
+          </select>
+        </label>
+        <label>Mensaje<textarea name="message" rows="4" required></textarea></label>
+        <label class="form__check"><input type="checkbox" required> He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</label>
+        <button type="submit" class="btn btn--block">Enviar consulta</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="#top" class="logo logo--sm"><span>Cyber<strong>Valles</strong></span></a>
+    <nav>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+    <p>© <span id="year">2026</span> CyberValles. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
