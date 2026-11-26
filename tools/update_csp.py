@@ -4,11 +4,10 @@ Uso (desde la carpeta del sitio):  python tools/update_csp.py
 
 Cada página lleva una etiqueta <meta http-equiv="Content-Security-Policy"> que solo permite:
   - scripts propios y los scripts en línea que existan, identificados por su hash;
-  - estilos propios (en línea solo en la página con hCaptcha); fuerza HTTPS en todo recurso; imágenes propias; sin fuentes ni librerías externas;
-  - conexiones solo a este sitio y a api.web3forms.com (formulario);
-  - solo en las páginas con formulario (clase h-captcha): scripts, iframe, estilos y
-    conexiones de hcaptcha.com.
-Si añades o cambias un <script> en línea, o añades una página, vuelve a ejecutar este script.
+  - estilos, imágenes y fuentes propios (sin estilos en línea);
+  - ninguna conexión de red desde JavaScript, ningún iframe y ningún objeto;
+  - fuerza HTTPS en todo recurso.
+La web no carga nada de terceros. Si añades una página o un <script> en línea, vuelve a ejecutarlo.
 """
 import base64
 import glob
@@ -18,7 +17,7 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 META_RE = re.compile(r'[ \t]*<meta http-equiv="Content-Security-Policy"[^>]*>\r?\n')
-HC = "https://hcaptcha.com https://*.hcaptcha.com"
+PAGES = ['*.html', 'servicios/*.html', 'en/*.html', 'en/services/*.html']
 
 
 def inline_hashes(html):
@@ -33,33 +32,31 @@ def inline_hashes(html):
     return out
 
 
-def policy(hashes, captcha=False):
-    hc = (" " + HC) if captcha else ""
-    parts = [
+def policy(hashes):
+    return "; ".join([
         "default-src 'self'",
-        "script-src 'self' " + " ".join(hashes) + hc if hashes else "script-src 'self'" + hc,
-        # 'unsafe-inline' solo donde hCaptcha lo necesita (inyecta estilos); el resto de páginas, sin él
-        ("style-src 'self' 'unsafe-inline'" + hc) if captcha else "style-src 'self'",
+        "script-src 'self'" + ((" " + " ".join(hashes)) if hashes else ""),
+        "style-src 'self'",
         "img-src 'self' data:",
         "font-src 'self'",
-        "connect-src 'self' https://api.web3forms.com" + hc,
+        "connect-src 'none'",
+        "frame-src 'none'",
         "object-src 'none'",
         "base-uri 'self'",
         "form-action 'self'",
         "upgrade-insecure-requests",
-    ]
-    if captcha:
-        parts.insert(5, "frame-src " + HC)  # hCaptcha se muestra en un iframe
-    return "; ".join(parts)
+    ])
 
 
-for path in sorted(glob.glob(os.path.join(ROOT, '*.html')) + glob.glob(os.path.join(ROOT, 'servicios', '*.html'))):
+files = []
+for pattern in PAGES:
+    files += glob.glob(os.path.join(ROOT, *pattern.split('/')))
+for path in sorted(files):
     with open(path, encoding='utf-8', newline='') as f:
         html = f.read()
     nl = '\r\n' if '\r\n' in html else '\n'
     html = META_RE.sub('', html)
-    meta = '  <meta http-equiv="Content-Security-Policy" content="%s">%s' % (
-        policy(inline_hashes(html), 'class="h-captcha"' in html), nl)
+    meta = '  <meta http-equiv="Content-Security-Policy" content="%s">%s' % (policy(inline_hashes(html)), nl)
     m = re.search(r'<meta name="viewport"[^>]*>\r?\n', html)
     if not m:  # páginas con <head> en una sola línea
         m = re.search(r'<meta name="viewport"[^>]*>', html)

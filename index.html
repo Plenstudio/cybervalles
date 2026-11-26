@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' 'unsafe-inline' https://hcaptcha.com https://*.hcaptcha.com; img-src 'self' data:; font-src 'self'; frame-src https://hcaptcha.com https://*.hcaptcha.com; connect-src 'self' https://api.web3forms.com https://hcaptcha.com https://*.hcaptcha.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <title>CyberValles · Ciberseguridad gestionada, SIEM y SOC para empresas</title>
   <meta name="description" content="CyberValles protege tu empresa con SIEM y SOC 24/7, pentesting, análisis de vulnerabilidades, simulaciones de phishing, formación y DLP.">
   <link rel="canonical" href="https://cybervalles.com/">
+  <link rel="alternate" hreflang="es" href="https://cybervalles.com/">
+  <link rel="alternate" hreflang="en" href="https://cybervalles.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://cybervalles.com/">
   <meta property="og:title" content="CyberValles · Ciberseguridad gestionada">
   <meta property="og:description" content="SIEM + SOC, pentesting, análisis de vulnerabilidades, phishing, formación y DLP.">
   <meta property="og:url" content="https://cybervalles.com/">
@@ -14,7 +17,7 @@
   <meta name="theme-color" content="#0a1020">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261126e">
+  <link rel="stylesheet" href="styles.css?v=20261126g">
 </head>
 <body>
 
@@ -30,6 +33,7 @@
       <a href="#siem-soc">SIEM + SOC</a>
       <a href="#metodo">Cómo trabajamos</a>
       <a href="#faq">Preguntas</a>
+      <a href="/en/" class="lang" hreflang="en" lang="en" title="English">EN</a>
       <a href="#contacto" class="btn btn--sm">Contacto</a>
     </nav>
   </div>
@@ -236,46 +240,13 @@
         <p class="eyebrow">Contacto</p>
         <h2>Hablemos de tu seguridad</h2>
         <p>Cuéntanos qué necesitas y te respondemos en menos de 24 horas laborables.</p>
-        <ul class="contact__data">
-          <li><span>Email</span><a href="mailto:info@cybervalles.com">info@cybervalles.com</a></li>
-          <li><span>Teléfono</span><a href="tel:+34623184718">+34 623 184 718</a></li>
-          <li><span>WhatsApp</span><a href="https://wa.me/34623184718?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestros%20servicios%20de%20ciberseguridad." target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a></li>
-          <li><span>Dirección</span>Castellar del Vallès (Barcelona)</li>
-        </ul>
       </div>
-
-      <form class="form" id="contact-form" action="/404.html" method="post" novalidate>
-        <input type="hidden" name="access_key" value="9c3a9b90-455e-42c8-9f1f-d54a9e5b773d">
-        <input type="hidden" name="subject" value="Nueva consulta desde cybervalles.com">
-        <input type="hidden" name="from_name" value="Web CyberValles">
-        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-        <div class="form__row">
-          <label>Nombre<input type="text" name="name" required autocomplete="name" maxlength="80"></label>
-          <label>Empresa<input type="text" name="company" autocomplete="organization" maxlength="80"></label>
-        </div>
-        <div class="form__row">
-          <label>Email<input type="email" name="email" required autocomplete="email" maxlength="120"></label>
-          <label>Teléfono<input type="tel" name="phone" id="f-phone" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9+()\s.\-]{6,20}" placeholder="+34 600 000 000"></label>
-        </div>
-        <label>Servicio de interés
-          <select name="service">
-            <option data-slug="siem-soc">SIEM + SOC gestionado</option>
-            <option data-slug="pentesting">Pentesting</option>
-            <option data-slug="analisis-vulnerabilidades">Análisis de vulnerabilidades</option>
-            <option data-slug="phishing">Simulaciones de phishing</option>
-            <option data-slug="formacion">Formación y concienciación</option>
-            <option data-slug="dlp">Prevención de fuga de datos (DLP)</option>
-            <option>No lo sé, necesito asesoramiento</option>
-          </select>
-        </label>
-        <label>Mensaje<textarea name="message" rows="4" required maxlength="3000"></textarea></label>
-        <label class="form__check"><input type="checkbox" name="consent" id="f-consent" required> He leído y acepto la <a href="/privacidad.html">política de privacidad</a>.</label>
-        <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
-        <button type="submit" class="btn btn--block">Enviar consulta</button>
-        <p class="form__status" role="status" aria-live="polite"></p>
-      </form>
-      <noscript><p class="form__status err">Para enviar el formulario necesitas activar JavaScript. También puedes escribirnos a info@cybervalles.com.</p></noscript>
+      <div class="contact__cards">
+        <a class="contact__card" href="mailto:info@cybervalles.com?subject=Consulta%20desde%20cybervalles.com"><span>Email</span><strong>info@cybervalles.com</strong></a>
+        <a class="contact__card" href="tel:+34623184718"><span>Teléfono</span><strong>+34 623 184 718</strong></a>
+        <a class="contact__card" href="https://wa.me/34623184718?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestros%20servicios%20de%20ciberseguridad." target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong>Escríbenos por WhatsApp</strong></a>
+        <div class="contact__card"><span>Dirección</span><strong>Castellar del Vallès (Barcelona)</strong></div>
+      </div>
     </div>
   </section>
 </main>
@@ -293,7 +264,6 @@
 </footer>
 
 <a class="wa-float" href="https://wa.me/34623184718?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestros%20servicios%20de%20ciberseguridad." target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-<script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
-<script src="script.js?v=20261126e"></script>
+<script src="script.js?v=20261126g"></script>
 </body>
 </html>

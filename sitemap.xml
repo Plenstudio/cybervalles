@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://cybervalles.com/</loc><lastmod>2026-11-26</lastmod><priority>1.0</priority></url>
+  <url><loc>https://cybervalles.com/en/</loc><lastmod>2026-11-26</lastmod><priority>1.0</priority></url>
   <url><loc>https://cybervalles.com/servicios/siem-soc.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cybervalles.com/en/services/siem-soc.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://cybervalles.com/servicios/pentesting.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cybervalles.com/en/services/pentesting.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://cybervalles.com/servicios/analisis-vulnerabilidades.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cybervalles.com/en/services/vulnerability-assessment.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://cybervalles.com/servicios/phishing.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cybervalles.com/en/services/phishing-simulations.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://cybervalles.com/servicios/formacion.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cybervalles.com/en/services/awareness-training.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://cybervalles.com/servicios/dlp.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://cybervalles.com/en/services/dlp.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
 </urlset>
