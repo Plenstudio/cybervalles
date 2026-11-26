@@ -4,7 +4,7 @@ Uso (desde la carpeta del sitio):  python tools/update_csp.py
 
 Cada página lleva una etiqueta <meta http-equiv="Content-Security-Policy"> que solo permite:
   - scripts propios y los scripts en línea que existan, identificados por su hash;
-  - estilos propios y en línea; imágenes propias; sin fuentes ni librerías externas;
+  - estilos propios (en línea solo en la página con hCaptcha); fuerza HTTPS en todo recurso; imágenes propias; sin fuentes ni librerías externas;
   - conexiones solo a este sitio y a api.web3forms.com (formulario);
   - solo en las páginas con formulario (clase h-captcha): scripts, iframe, estilos y
     conexiones de hcaptcha.com.
@@ -38,13 +38,15 @@ def policy(hashes, captcha=False):
     parts = [
         "default-src 'self'",
         "script-src 'self' " + " ".join(hashes) + hc if hashes else "script-src 'self'" + hc,
-        "style-src 'self' 'unsafe-inline'" + hc,
+        # 'unsafe-inline' solo donde hCaptcha lo necesita (inyecta estilos); el resto de páginas, sin él
+        ("style-src 'self' 'unsafe-inline'" + hc) if captcha else "style-src 'self'",
         "img-src 'self' data:",
         "font-src 'self'",
         "connect-src 'self' https://api.web3forms.com" + hc,
         "object-src 'none'",
         "base-uri 'self'",
         "form-action 'self'",
+        "upgrade-insecure-requests",
     ]
     if captcha:
         parts.insert(5, "frame-src " + HC)  # hCaptcha se muestra en un iframe

@@ -7,6 +7,8 @@ Escribe a **info@cybervalles.com** (también en `/.well-known/security.txt`). In
 - **Sitio estático** (GitHub Pages): no hay servidor propio, base de datos, panel de acceso ni contraseñas que atacar.
 - **HTTPS siempre**: activar *Enforce HTTPS* en GitHub Pages.
 - **Política de contenido (CSP)** en cada página: solo se ejecutan scripts propios; las conexiones solo van a este sitio y a `api.web3forms.com`. Se recalcula con `python tools/update_csp.py` (hay que ejecutarlo al añadir páginas o scripts en línea).
+- **Estilos sin `unsafe-inline`** en todas las páginas salvo la del formulario (hCaptcha inyecta estilos); `upgrade-insecure-requests` fuerza HTTPS en cualquier recurso.
+- **Anti-clickjacking básico** en `script.js` (oculta la web si se carga en un iframe ajeno). La defensa completa es la cabecera `frame-ancestors`, que GitHub Pages no permite.
 - **Sin cookies ni analítica**; solo se guarda en el navegador la hora del último envío (anti-spam).
 - **Sin dependencias externas** salvo hCaptcha en el formulario: ni librerías, ni fuentes, ni scripts de terceros.
 - **Código sin secretos**: la clave de Web3Forms (`access_key`) es pública por diseño; no hay tokens ni contraseñas en el repositorio ni en su historial.
@@ -20,6 +22,7 @@ Escribe a **info@cybervalles.com** (también en `/.well-known/security.txt`). In
 ## Lista de comprobación del propietario (fuera del código)
 - [ ] **Verificación en dos pasos** en: cuenta de GitHub, cuenta de Cloudflare, cuenta de Web3Forms, el registrador del dominio y el correo de contacto.
 - [ ] **Bloqueo de transferencia del dominio** y **privacidad WHOIS** activados en el registrador.
+- [ ] **Correo del dominio** (si usas `info@cybervalles.com`): registros **SPF, DKIM y DMARC** en el DNS para evitar que suplanten tu dominio.
 - [ ] **Registro CAA** en el DNS (por ejemplo, `letsencrypt.org`), si el panel lo permite, y **DNSSEC** si lo ofrece.
 - [ ] En GitHub: *Settings → Pages → Enforce HTTPS*; *Settings → Code security*: alertas de secretos activadas.
 - [ ] Renovar la fecha `Expires` de `.well-known/security.txt` cada año (caduca el 2027-11-26).

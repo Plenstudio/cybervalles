@@ -1,3 +1,10 @@
+// Anti-clickjacking básico (GitHub Pages no permite la cabecera frame-ancestors):
+// si la web se carga dentro de un iframe ajeno, se oculta y se intenta salir de él.
+if (window.top !== window.self) {
+  document.documentElement.style.display = 'none';
+  try { window.top.location = window.self.location; } catch (_) {}
+}
+
 // Menú móvil
 const toggle = document.querySelector('.nav__toggle');
 const menu = document.getElementById('menu');
