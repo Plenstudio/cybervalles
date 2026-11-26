@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' 'unsafe-inline' https://hcaptcha.com https://*.hcaptcha.com; img-src 'self' data:; font-src 'self'; frame-src https://hcaptcha.com https://*.hcaptcha.com; connect-src 'self' https://api.web3forms.com https://hcaptcha.com https://*.hcaptcha.com; object-src 'none'; base-uri 'self'; form-action 'self'">
   <title>CyberValles · Ciberseguridad gestionada, SIEM y SOC para empresas</title>
   <meta name="description" content="CyberValles protege tu empresa con SIEM y SOC 24/7, pentesting, análisis de vulnerabilidades, simulaciones de phishing, formación y DLP.">
   <link rel="canonical" href="https://cybervalles.com/">
@@ -11,11 +12,9 @@
   <meta property="og:url" content="https://cybervalles.com/">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0a1020">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261126a">
 </head>
 <body>
 
@@ -240,20 +239,19 @@
         </ul>
       </div>
 
-      <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <!-- TODO: pega aquí tu Access Key de web3forms.com -->
-        <input type="hidden" name="access_key" value="TU_ACCESS_KEY_DE_WEB3FORMS">
+      <form class="form" id="contact-form" action="/404.html" method="post" novalidate>
+        <input type="hidden" name="access_key" value="9c3a9b90-455e-42c8-9f1f-d54a9e5b773d">
         <input type="hidden" name="subject" value="Nueva consulta desde cybervalles.com">
         <input type="hidden" name="from_name" value="Web CyberValles">
-        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="form__row">
-          <label>Nombre<input type="text" name="name" required autocomplete="name"></label>
-          <label>Empresa<input type="text" name="company" autocomplete="organization"></label>
+          <label>Nombre<input type="text" name="name" required autocomplete="name" maxlength="80"></label>
+          <label>Empresa<input type="text" name="company" autocomplete="organization" maxlength="80"></label>
         </div>
         <div class="form__row">
-          <label>Email<input type="email" name="email" required autocomplete="email"></label>
-          <label>Teléfono<input type="tel" name="phone" autocomplete="tel"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email" maxlength="120"></label>
+          <label>Teléfono<input type="tel" name="phone" id="f-phone" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9+()\s.\-]{6,20}" placeholder="+34 600 000 000"></label>
         </div>
         <label>Servicio de interés
           <select name="service">
@@ -266,11 +264,13 @@
             <option>No lo sé, necesito asesoramiento</option>
           </select>
         </label>
-        <label>Mensaje<textarea name="message" rows="4" required></textarea></label>
-        <label class="form__check"><input type="checkbox" required> He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</label>
+        <label>Mensaje<textarea name="message" rows="4" required maxlength="3000"></textarea></label>
+        <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
+        <label class="form__check"><input type="checkbox" name="consent" id="f-consent" required> He leído y acepto la <a href="/privacidad.html">política de privacidad</a>.</label>
         <button type="submit" class="btn btn--block">Enviar consulta</button>
         <p class="form__status" role="status" aria-live="polite"></p>
       </form>
+      <noscript><p class="form__status err">Para enviar el formulario necesitas activar JavaScript. También puedes escribirnos a info@cybervalles.com.</p></noscript>
     </div>
   </section>
 </main>
@@ -279,14 +279,15 @@
   <div class="container footer__inner">
     <a href="#top" class="logo logo--sm"><span>Cyber<strong>Valles</strong></span></a>
     <nav>
-      <a href="aviso-legal.html">Aviso legal</a>
-      <a href="privacidad.html">Privacidad</a>
-      <a href="cookies.html">Cookies</a>
+      <a href="/aviso-legal.html">Aviso legal</a>
+      <a href="/privacidad.html">Privacidad</a>
+      <a href="/cookies.html">Cookies</a>
     </nav>
     <p>© <span id="year">2026</span> CyberValles. Todos los derechos reservados.</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
+<script src="script.js?v=20261126a"></script>
 </body>
 </html>
