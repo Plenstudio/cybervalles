@@ -7,6 +7,6 @@ Web estática (HTML/CSS/JS, sin build) para GitHub Pages.
 - `404.html`, `robots.txt`, `sitemap.xml`, `.well-known/security.txt` (hace falta `.nojekyll`).
 - **CSP:** cada página lleva una política de contenido en una `<meta>`. Tras añadir páginas o scripts en línea, ejecuta `python tools/update_csp.py`.
 - **Dominio:** en GitHub, Settings → Pages → Custom domain: `cybervalles.com` (crea el archivo `CNAME`) y activa Enforce HTTPS. DNS: 4 registros A (185.199.108.153, .109.153, .110.153, .111.153) y CNAME `www` → `<usuario>.github.io`.
-- **Pendiente antes de publicar:** email, teléfono y dirección de ejemplo (`TODO` en `index.html`, `[...]` en las páginas legales).
+- **Pendiente antes de publicar:** email de contacto y datos legales entre corchetes (`[...]`) en las páginas legales: razón social, NIF y calle.
 
 Resumen de protecciones y lista de comprobación del propietario: `SECURITY.md`.
