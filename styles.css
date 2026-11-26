@@ -216,8 +216,8 @@ details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
 details p { color: var(--muted); padding-bottom: 12px; }
 
 /* Contact */
-.contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: start; }
-.contact > div > p { color: var(--muted); }
+.contact { display: grid; grid-template-columns: 1fr; gap: 36px; justify-items: center; text-align: center; }
+.contact > div > p { color: var(--muted); max-width: 36em; margin-inline: auto; }
 
 /* Footer */
 .footer { border-top: 1px solid var(--border); padding: 36px 0; color: var(--muted); font-size: .9rem; }
@@ -303,7 +303,7 @@ details p { color: var(--muted); padding-bottom: 12px; }
 @media (max-width: 720px) { .nav__menu a.lang { align-self: flex-start; margin: 12px 0 0; padding: .35em .8em; } }
 
 /* Contacto directo */
-.contact__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; max-width: 700px; text-align: left; }
 .contact__card { display: grid; gap: 6px; align-content: start; padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); transition: border-color .2s, transform .2s; }
 a.contact__card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
 .contact__card span { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
